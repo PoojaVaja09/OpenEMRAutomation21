@@ -29,7 +29,9 @@ namespace OpenEMRApplication
             driver.FindElement(By.XPath("//button[@type='submit']")).Click();
 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(50));
-            wait.Until(x => x.FindElement(By.XPath("//div[contains(text(),'Patient/Client')]")));
+            wait.Message = "Calendar text is not there";
+            wait.Until(x => x.FindElement(By.XPath("//span[text()='Calendar']")));
+
 
             string actualValue = driver.Title;
 
