@@ -13,6 +13,7 @@ namespace OpenEMRApplication.Pages
         private By submitLocator = By.XPath("//button[@type='submit']");
         private By languageLocator = By.Name("languageChoice");
         private By errorLocator = By.XPath("//div[contains(text(),'Invalid username or password')]");
+        private By acknowledgmentsLocator = By.PartialLinkText("Acknowledgments");
 
 
         private IWebDriver driver;
@@ -47,6 +48,16 @@ namespace OpenEMRApplication.Pages
         public string getErrorMessage()
         {
             return driver.FindElement(errorLocator).Text.Trim();
+        }
+
+        public void ClickOnAcknowledgmentsLicensingCertification()
+        {
+            driver.FindElement(acknowledgmentsLocator).Click();
+        }
+
+        public void switchToAcknowledgmentsLicensingCertificationTab()
+        {
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
         }
     }
 }

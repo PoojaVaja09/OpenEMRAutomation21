@@ -9,6 +9,8 @@ namespace OpenEMRApplication.Pages
     class DashboardPage
     {
         private By calenderLocator = By.XPath("//span[text()='Calendar']");
+        private By patientClientLocator = By.XPath("//div[text()='Patient/Client']");
+        private By patientLocator = By.XPath("//div[text()='Patients']");
 
 
         private IWebDriver driver;
@@ -28,6 +30,16 @@ namespace OpenEMRApplication.Pages
         public string getTitle()
         {
             return driver.Title.Trim();
+        }
+
+        public void clickOnPatientClient()
+        {
+            driver.FindElement(patientClientLocator).Click();
+        }
+
+        public void clickOnPatient()
+        {
+            driver.FindElement(patientLocator).Click();
         }
     }
 }
