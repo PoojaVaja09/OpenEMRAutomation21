@@ -1,7 +1,9 @@
 ﻿using ClosedXML.Excel;
+using Newtonsoft.Json;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace OpenEMRApplication
@@ -9,6 +11,23 @@ namespace OpenEMRApplication
     class DemoTest
     {
         [Test]
+        public void JSONread()
+        {
+            StreamReader reader = new StreamReader(@"D:\Sollers\Azure Full Stack June 2021\SDET Track\SeleniumWebdriverConcept\OpenEMRApplication\OpenEMRApplication\TestData\data.json");
+            string text = reader.ReadToEnd();
+            Console.WriteLine(text);
+
+            dynamic json=JsonConvert.DeserializeObject(text);
+
+            Console.WriteLine(json["browser"]);
+            Console.WriteLine(json["url"]);
+
+        }
+
+
+
+        [Test]
+
         public void ExcelRead1()
         {   //print one cell value
 

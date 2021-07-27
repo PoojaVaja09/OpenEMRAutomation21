@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using OpenEMRApplication.Utilities;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
@@ -17,12 +18,12 @@ namespace OpenEMRApplication.Base
         [SetUp]
         public void Initialization()
         {
-            string browser = "ff";
+            string browser = JsonUtils.GetValue(@"D:\Sollers\Azure Full Stack June 2021\SDET Track\SeleniumWebdriverConcept\OpenEMRApplication\OpenEMRApplication\TestData\data.json", "browser");
 
             switch (browser.ToLower())
             {
                 case "ff":
-                //case "firefox":
+             
                     driver = new FirefoxDriver();
                     break;
                 case "ie":
@@ -35,7 +36,7 @@ namespace OpenEMRApplication.Base
             
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            driver.Url = "http://demo.openemr.io/b/openemr/interface/login/login.php?site=default";
+            driver.Url = JsonUtils.GetValue(@"D:\Sollers\Azure Full Stack June 2021\SDET Track\SeleniumWebdriverConcept\OpenEMRApplication\OpenEMRApplication\TestData\data.json", "url");
         }
 
         [TearDown]
