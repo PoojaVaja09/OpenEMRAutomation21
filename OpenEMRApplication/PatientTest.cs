@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenEMRApplication.Base;
 using OpenEMRApplication.Pages;
+using OpenEMRApplication.Utilities;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
@@ -12,14 +13,14 @@ namespace OpenEMRApplication
 {
     class PatientTest: WebdriverWrapper
     {
-       
-        [Test]
-        public void AddPatientTest()
+
+        [Test, TestCaseSource(typeof(TestCaseSourceUtils), "AddPatientTestData")]
+        public void AddPatientTest(string username, string password, string language, string firstname, string lastname, string DOB, string gender,string expectedPatientName)
         {
             LoginPage login = new LoginPage(driver);
-            login.EnterUsername("admin");
-            login.EnterPassword("pass");
-            login.selectLanguageByText("English (Indian)");
+            login.EnterUsername(username);
+            login.EnterPassword(password);
+            login.selectLanguageByText(language);
             login.clickOnSubmit();
 
             //DashboardPage
@@ -36,10 +37,10 @@ namespace OpenEMRApplication
             //SearchOrAddPatientPage
             SearchOrAddPatientPage searchOrAddPatient = new SearchOrAddPatientPage(driver);
             searchOrAddPatient.switchToPatFrame("pat");
-            searchOrAddPatient.sendPatientFName("John");
-            searchOrAddPatient.sendPatientLName("Smith");
-            searchOrAddPatient.sendPatientDOB("2021-07-19");
-            searchOrAddPatient.selectGender("Female");
+            searchOrAddPatient.sendPatientFName(firstname);
+            searchOrAddPatient.sendPatientLName(lastname);
+            searchOrAddPatient.sendPatientDOB(DOB);
+            searchOrAddPatient.selectGender(gender);
             searchOrAddPatient.clickOnCreateNewPatientButton();
             searchOrAddPatient.switchToDefaultFrame();
 
@@ -55,7 +56,7 @@ namespace OpenEMRApplication
             patientDashboard.switchToPatFrame("pat");
 
             String actualValueOfAddedPatient = patientDashboard.getAddedPatientText();
-             Assert.AreEqual("Medical Record Dashboard - John Smith", actualValueOfAddedPatient);
+             Assert.AreEqual(expectedPatientName, actualValueOfAddedPatient);
 
         }
     }

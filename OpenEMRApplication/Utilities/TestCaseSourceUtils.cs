@@ -39,5 +39,22 @@ namespace OpenEMRApplication.Utilities
                 return main;
             }
         
+        public static object[] InvalidCredentialData()
+        {
+            object[] main = ExcelUtils.GetSheetIntoTwoDimObjectArray(@"D:\Sollers\Azure Full Stack June 2021\SDET Track\SeleniumWebdriverConcept\OpenEMRApplication\OpenEMRApplication\TestData\OpenEMRData.xlsx", "ValidCredentialTest");
+            return main;
+        }
+
+        public static object[] AddPatientTestData()
+        {
+            object[] main = ExcelUtils.GetSheetIntoTwoDimObjectArray(@"D:\Sollers\Azure Full Stack June 2021\SDET Track\SeleniumWebdriverConcept\OpenEMRApplication\OpenEMRApplication\TestData\OpenEMRData.xlsx", "AddPatientTest");
+            return main;
+        }
+
+        public static object[] VersionNumberTestData()
+        {
+            object[] main = ExcelUtils.GetSheetIntoTwoDimObjectArray(@"D:\Sollers\Azure Full Stack June 2021\SDET Track\SeleniumWebdriverConcept\OpenEMRApplication\OpenEMRApplication\TestData\OpenEMRData.xlsx", "VersionNumberTest");
+            return main;
+        }
     }
 }
