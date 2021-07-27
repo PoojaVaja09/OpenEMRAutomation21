@@ -17,12 +17,12 @@ namespace OpenEMRApplication.Base
         [SetUp]
         public void Initialization()
         {
-            string browser = "firefox";
+            string browser = "ff";
 
             switch (browser.ToLower())
             {
                 case "ff":
-                case "firefox":
+                //case "firefox":
                     driver = new FirefoxDriver();
                     break;
                 case "ie":
