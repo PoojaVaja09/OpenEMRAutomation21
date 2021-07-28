@@ -1,5 +1,6 @@
-﻿using NUnit.Framework;
-using OpenEMRApplication.Base;
+﻿using AutomationWrapper.Base;
+using NUnit.Framework;
+
 using OpenEMRApplication.Pages;
 using OpenEMRApplication.Utilities;
 using OpenQA.Selenium;
@@ -9,7 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-
+    
 namespace OpenEMRApplication
 {
     class LoginTest:WebdriverWrapper

@@ -20,4 +20,8 @@
     <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.29.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AutomationWrapper\AutomationWrapper.csproj" />
+  </ItemGroup>
+
 </Project>
