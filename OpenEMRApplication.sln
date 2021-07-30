@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagentoApplication", "Magen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IkeaApplication", "IkeaApplication\IkeaApplication.csproj", "{3393FA8E-1EAA-4161-8A11-83DEF8C7D0CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignorawareApplication", "SignorawareApplication\SignorawareApplication.csproj", "{CFE8EC27-DBA3-4BE5-A0FC-CFAEE62EF616}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3393FA8E-1EAA-4161-8A11-83DEF8C7D0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3393FA8E-1EAA-4161-8A11-83DEF8C7D0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3393FA8E-1EAA-4161-8A11-83DEF8C7D0CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE8EC27-DBA3-4BE5-A0FC-CFAEE62EF616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE8EC27-DBA3-4BE5-A0FC-CFAEE62EF616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE8EC27-DBA3-4BE5-A0FC-CFAEE62EF616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE8EC27-DBA3-4BE5-A0FC-CFAEE62EF616}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
